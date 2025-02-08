@@ -138,3 +138,23 @@ ul li span:hover {
         font-size: 16px;
     }
 }
+
+@media (max-width: 480px) {
+    .row {
+        flex-direction: column; /* Stack input and button */
+        padding: 10px;
+    }
+
+    input {
+        width: 100%; /* Full width */
+        padding: 12px;
+        margin-bottom: 10px; /* Add space below input */
+    }
+
+    button {
+        width: 100%; /* Make button full width */
+        padding: 12px;
+        font-size: 16px; /* Adjust font size */
+    }
+}
+
