@@ -21,6 +21,11 @@ body {
 }
 
 .todo-app {
+    display: flex;
+    flex-direction: column;
+    height: 80vh; /* Ensure it takes most of the screen */
+    max-height: 80vh; /* Prevent it from growing too much */
+    overflow: hidden; /* Prevent scrolling outside */
     width: 100%;
     background: #fff;
     padding: 30px;
@@ -42,10 +47,23 @@ body {
     margin-left: 10px;
 }
 
+#list-container {
+    flex: 1; /* Allow list to take remaining space */
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 60vh; /* Ensure space for input */
+    padding-right: 10px; /* Prevent text from touching edge */
+}
+
 /* Input Section */
 .row {
     display: flex;
     align-items: center;
+    position: sticky;
+    bottom: 0;
+    background: white;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    z-index: 10;
     background: #edeef0;
     border-radius: 30px;
     padding-left: 15px;
@@ -155,6 +173,18 @@ ul li span:hover {
         width: 100%; /* Make button full width */
         padding: 12px;
         font-size: 16px; /* Adjust font size */
+    }
+}
+
+/* Make sure the list has space to scroll on mobile */
+@media (max-width: 480px) {
+    .todo-app {
+        height: 90vh;
+        max-height: 90vh;
+    }
+
+    #list-container {
+        max-height: 70vh;
     }
 }
 
